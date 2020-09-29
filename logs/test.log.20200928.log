@@ -1,0 +1,7 @@
+{"level":"error","msg":"init kafka failed,err:kafka: client has run out of available brokers to talk to (Is your cluster reachable?)\n","time":"2020-09-28 21:48:41"}
+{"level":"info","msg":"init kafka success","time":"2020-09-28 21:48:41"}
+{"level":"error","msg":"init kafka failed,err:kafka: client has run out of available brokers to talk to (Is your cluster reachable?)\n","time":"2020-09-28 21:48:57"}
+{"level":"info","msg":"init kafka success","time":"2020-09-28 21:48:57"}
+{"level":"error","msg":"init kafka failed,err:kafka: client has run out of available brokers to talk to (Is your cluster reachable?)\n","time":"2020-09-28 21:49:57"}
+{"level":"info","msg":"init kafka success","time":"2020-09-28 21:51:23"}
+{"level":"info","msg":"init kafka success","time":"2020-09-28 21:51:50"}

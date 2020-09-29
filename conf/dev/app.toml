@@ -1,0 +1,10 @@
+# this is a base config
+[kafka]
+    kafka_addr = "127.0.0.1:9092"
+    chan_max_size = 10
+
+[log]
+    log_files = "test.log"
+    log_path = "logs"
+    log_level = "debug"
+    max_age = 7
