@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/julianlee107/logagent/conf"
+	"github.com/julianlee107/logagent/etcd"
 	"github.com/julianlee107/logagent/kafka"
 	"github.com/julianlee107/logagent/logger"
 	"path"
@@ -30,4 +31,11 @@ func main() {
 		return
 	}
 	logger.Log.Info("init kafka success")
+
+	err = etcd.Init(cfg.Etcd.Address, time.Duration(cfg.Etcd.Timeout)*time.Second)
+	if err != nil {
+		logger.Log.Errorf("init etcd failed,err:%v\n", err)
+		return
+	}
+	logger.Log.Info("init etcd success")
 }

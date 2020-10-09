@@ -14,8 +14,9 @@ var ViperConfMap map[string]*viper.Viper
 var AppConfig AppConf
 
 type AppConf struct {
-	Kafka KafkaConf
-	Log   LogConf
+	Kafka KafkaConf `mapstructure:"kafka"`
+	Log   LogConf   `mapstructure:"log"`
+	Etcd  EtcdConf  `mapstructure:"etcd"`
 }
 
 type KafkaConf struct {
@@ -28,6 +29,12 @@ type LogConf struct {
 	FileName string `mapstructure:"log_files"`
 	LogLevel string `mapstructure:"log_level"`
 	MaxAge   int64  `mapstructure:"max_age"`
+}
+
+type EtcdConf struct {
+	Address string `mapstructure:"address"`
+	Timeout int    `mapstructure:"timeout"`
+	Key     string `mapstructure:"key"`
 }
 
 func Init() {

@@ -8,3 +8,7 @@
     log_path = "logs"
     log_level = "debug"
     max_age = 7
+[etcd]
+    address = "127.0.0.1:2379"
+    timeout = 5
+    key = "logagent/%s/collect"
