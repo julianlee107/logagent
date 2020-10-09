@@ -9,7 +9,8 @@ import (
 )
 
 var (
-	client *clientv3.Client
+	client    *clientv3.Client
+	DeleteSig = make(chan *clientv3.Event, 10)
 )
 
 type LogEntry struct {
@@ -59,6 +60,8 @@ func WatchConf(key string, newConfCh chan<- []*LogEntry) {
 					logger.Log.Warnf("unmarshal failed,err:%v\n", err)
 					continue
 				}
+			} else {
+				DeleteSig <- event
 			}
 			logger.Log.Infof("Get new conf :%v \n", newConf)
 			newConfCh <- newConf
